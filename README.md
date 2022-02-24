@@ -2,11 +2,25 @@
 
 This is the workbook for a workshop led by Jonathan Lipps on how to use the [Appium AltUnity Plugin](https://github.com/projectxyzio/appium-altunity-lugin). Make sure you have taken care of the [prerequisites](prereqs.md) before following this workbook.
 
+# Prerequisites
+
+*(To be completed before the workshop)*
+
+### Unity
+
+1. You have downloaded Unity and Unity Hub for your platform
+2. You have created a Unity account and are logged in with Unity Hub
+3. You have a license for the Unity editor; a "free personal license" is fine
+
+### Appium
+
+1. You have a working Appium 2.0 install (`npm install -g appium@next`)
+2. You can run Android sessions on an emulator or real device with the UiAutomator2 driver
+3. You are familiar with using `adb` from the command line and have access to the Android SDK
+
 # Conceptual intro
 
-*10 min*
-
-This portion of the workshop is covered with slides.
+*(10 min)* This portion of the workshop is covered with slides and explains the ideas and architecture underlying our work here.
 
 # Building our game
 
@@ -97,6 +111,4 @@ The app is now properly instrumented with AltUnity Tester and ready for testing 
 
 # Conclusion and next steps
 
-*5 min*
-
-This portion of the workshop is covered with slides.
+*(5 min)* This portion of the workshop is covered with slides.
