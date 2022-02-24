@@ -12,7 +12,7 @@ This portion of the workshop is covered with slides.
 
 *(20 min)* The goal in this section is to get our demo game building and running on an Android device.
 
-## Project initialization
+### Project initialization
 
 
 * Open the Unity Hub
@@ -20,7 +20,7 @@ This portion of the workshop is covered with slides.
 * Skip the tutorial and head straight to the scene ("Load Scene")
 * Press the "Play" button to make sure the game runs. You can play it for a bit.
 
-## Add Android support
+### Add Android support
 
 * Make sure you have an Android device or emulator connected
 * In Unity, go to Build Settings (File > Build Settings)
@@ -55,7 +55,7 @@ If you get a message about ARM64 vs ARMv7, or x86:
 
 *(10 min)* The goal in this section is to instrument the app with the AltUnity Tester server which is necessary for the Appium plugin to communicate with internal game objects.
 
-## Add the AltUnity Tester to the project
+### Add the AltUnity Tester to the project
 
 * Go to Asset Store (Window > Asset Store), this will open up the Unity asset website
     * Ensure you are logged in with your Unity account
@@ -73,7 +73,7 @@ If you get a message about ARM64 vs ARMv7, or x86:
 * Confirm installation by checking that a new "AltUnity Tools" menu item is shown
     * Open up the "AltUnity Tester Editor"
 
-## Build the app with the AltUnity server
+### Build the app with the AltUnity server
 
 With the AltUnity Tester Editor open:
 
