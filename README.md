@@ -15,8 +15,13 @@ This is the workbook for a workshop led by Jonathan Lipps on how to use the [App
 ### Appium
 
 1. You have a working Appium 2.0 install (`npm install -g appium@next`)
-2. You can run Android sessions on an emulator or real device with the UiAutomator2 driver
+2. You can run Android sessions on an emulator or real device with the UiAutomator2 driver (`appium driver install uiautomator2`)
 3. You are familiar with using `adb` from the command line and have access to the Android SDK
+4. You should have Node.js 14+
+
+### Test Framework (Optional)
+
+We'll be writing scripts from scratch in WebDriverIO. If you want, you can use another test language or framework, you'll just need to do the setup yourself (and be comfortable transposing WebDriver commands into your preferred API). So if you're not going to follow along, make sure you come along with an empty Java or Python automation project, including the Appium client library, that you can start creating Appium sessions with.
 
 # Conceptual intro
 
@@ -98,12 +103,47 @@ With the AltUnity Tester Editor open:
     * It should create `AppiumWorkshop.apk` in your folder
     * Install it to the device using `adb`
     * You should see the same game but now with an AltUnity Tester window showing waiting for connections
+    * Take note of the port it is running on, probably the default of `13000`. This can be adjusted.
 
 The app is now properly instrumented with AltUnity Tester and ready for testing with the Appium plugin
+
+### Add some IDs
+
+* AltUnity Tools > AltId > Add AltId to Every Object in Active Scene
+* Now find the Player object in the Hierarchy, and give it a custom player name as the AltId
+* Save and rebuild
 
 # Configuring the Appium plugin
 
 *(10 min)* The goal of this section is to ensure we can have an empty Appium script that successfully connects to the AltUnity process within the game.
+
+Install the Appium AltUnity plugin:
+* `appium plugin install --source=npm appium-altunity-plugin`
+* Run the Appium server with the plugin enabled: `appium --use-plugins=altunity`
+* Keep this server running
+
+Ensure the AltUnity service is accessible on your system:
+* Use `adb` to forward the appropriate port to a port on your system (can be the same or different)
+    * `adb forward tcp:13000 tcp:13000`
+
+Set up the empty script:
+* Clone this repo somewhere: `git clone git@github.com:jlipps/unity-plugin-workshop.git`
+* Head into that newly directory with a terminal session
+* Run `npm install` inside it to get our client dependencies (we'll use WebdriverIO; you could run this workshop in parallel with another language if you prefer)
+* Set the absolute path to your app as the UNITY_APP environment variable
+    * `export UNITY_APP=/path/to/AppiumWorkshop.apk`
+* Check out `test/empty.js` and make necessary updates
+    * update the `appium:altUnityHost` and `appium:altUnityPort` if appropriate
+
+Run the empty script:
+* `npx mocha ./test/empty.js`
+* Test should pass
+* Should see something like `[AltUnityPlugin] Connection to AltUnity server established` in the Appium logs. This is how we know we were able to successfully connect with the AltUnity server.
+
+Troubleshooting:
+* Did you forward your port correctly to your device?
+* Did you use the app with the AltUnity server instrumented into it?
+* Did you opt in to using the plugin when you started Appium?
 
 # Designing and writing tests
 
