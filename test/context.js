@@ -9,7 +9,9 @@ describe('Unity Game', function() {
     driver = await remote(WDIO_PARAMS)
   })
 
-  it('should open and do nothing', function() {
+  it('should switch to the unity context', async function() {
+    await driver.switchContext('UNITY')
+    console.log(await driver.getPageSource())
   })
 
   after(async function() {

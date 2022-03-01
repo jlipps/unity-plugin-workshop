@@ -19,5 +19,8 @@
   "dependencies": {
     "mocha": "^9.2.1",
     "webdriverio": "^7.16.16"
+  },
+  "devDependencies": {
+    "earljs": "^0.2.1"
   }
 }
