@@ -267,7 +267,7 @@ Let's test some actual game behaviour! We want to cause the player to run and ju
       id:'keyboard',
       actions: [
         {type: 'keyDown', value: 'RightArrow'},
-        {type: 'pause', duration: 1500},
+        {type: 'pause', duration: 1600},
         {type: 'keyDown', value: 'Space'},
         {type: 'pause', duration: 500},
         {type: 'keyUp', value: 'Space'},
