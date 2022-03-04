@@ -45,19 +45,19 @@ This is the workbook for a workshop led by Jonathan Lipps on how to use the [App
 Here are the specific versions of the various tools used while developing this workshop. Newer or
 older versions may also work fine, but these versions are verified to work correctly.
 
-|Tool|Version|
-|||
-|macOS|12.2.1|
-|Unity Hub|3.0.1|
-|Unity IDE|2020.3.30f1|
-|Unity-bundled OpenJDK|1.8.0|
-|Unity-bundled Android SDK Build tools|30.0.2|
-|Unity-bundled Android Platform|30 rev 3|
-|Unity asset: AltUnity Tester|1.7.0|
-|Unity asset: JSON .NET for Unity|2.0.1|
-|Appium|2.0.0-beta.25|
-|Appium UiAutomator2 driver|2.0.3|
-|Appium AltUnity Plugin|1.3.0|
+| Tool                                  | Version       |
+|---------------------------------------|---------------|
+| macOS                                 | 12.2.1        |
+| Unity Hub                             | 3.0.1         |
+| Unity IDE                             | 2020.3.30f1   |
+| Unity-bundled OpenJDK                 | 1.8.0         |
+| Unity-bundled Android SDK Build tools | 30.0.2        |
+| Unity-bundled Android Platform        | 30 rev 3      |
+| Unity asset: AltUnity Tester          | 1.7.0         |
+| Unity asset: JSON .NET for Unity      | 2.0.1         |
+| Appium                                | 2.0.0-beta.25 |
+| Appium UiAutomator2 driver            | 2.0.3         |
+| Appium AltUnity Plugin                | 1.3.0         |
 
 
 ### Test Framework (Optional)
