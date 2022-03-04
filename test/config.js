@@ -1,3 +1,7 @@
+if (!process.env['UNITY_APP']) {
+  throw new Error(`You must set the UNITY_APP env var with path to the demo game`)
+}
+
 const capabilities = {
   platformName: 'Android',
   'appium:deviceName': 'Android',
