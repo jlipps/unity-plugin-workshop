@@ -1,6 +1,6 @@
 # Unity Plugin Workshop
 
-This is the workbook for a workshop led by Jonathan Lipps on how to use the [Appium AltUnity Plugin](https://github.com/projectxyzio/appium-altunity-lugin). Make sure you have taken care of the [prerequisites](prereqs.md) before following this workbook.
+This is the workbook for a workshop led by Jonathan Lipps on how to use the [Appium AltUnity Plugin](https://github.com/projectxyzio/appium-altunity-lugin). Make sure you have taken care of the prerequisites before following this workbook.
 
 * [Prerequisites](#prerequisites)
   * [Unity](#unity)
