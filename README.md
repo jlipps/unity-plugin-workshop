@@ -2,7 +2,28 @@
 
 This is the workbook for a workshop led by Jonathan Lipps on how to use the [Appium AltUnity Plugin](https://github.com/projectxyzio/appium-altunity-lugin). Make sure you have taken care of the [prerequisites](prereqs.md) before following this workbook.
 
-# Prerequisites
+* [Prerequisites](#prerequisites)
+  * [Unity](#unity)
+  * [Appium](#appium)
+  * [Version List](#version-list)
+  * [Test Framework (Optional)](#test-framework-(optional))
+* [Conceptual intro](#conceptual-intro)
+* [Building our game](#building-our-game)
+  * [Project initialization](#project-initialization)
+  * [Add Android support](#add-android-support)
+* [Setting up AltUnity tester](#setting-up-altunity-tester)
+  * [Add the AltUnity Tester to the project](#add-the-altunity-tester-to-the-project)
+  * [Build the app with the AltUnity server](#build-the-app-with-the-altunity-server)
+  * [Add some IDs](#add-some-ids)
+* [Configuring the Appium plugin](#configuring-the-appium-plugin)
+* [Designing and writing tests](#designing-and-writing-tests)
+  * [The Unity context](#the-unity-context)
+  * [Working with elements](#working-with-elements)
+  * [Keystrokes, clicking, and text](#keystrokes,-clicking,-and-text)
+  * [Putting it all together](#putting-it-all-together)
+* [Conclusion and next steps](#conclusion-and-next-steps)
+
+## Prerequisites
 
 *(To be completed before the workshop)*
 
@@ -19,15 +40,35 @@ This is the workbook for a workshop led by Jonathan Lipps on how to use the [App
 3. You are familiar with using `adb` from the command line and have access to the Android SDK
 4. You should have Node.js 14+
 
+### Version List
+
+Here are the specific versions of the various tools used while developing this workshop. Newer or
+older versions may also work fine, but these versions are verified to work correctly.
+
+|Tool|Version|
+|||
+|macOS|12.2.1|
+|Unity Hub|3.0.1|
+|Unity IDE|2020.3.30f1|
+|Unity-bundled OpenJDK|1.8.0|
+|Unity-bundled Android SDK Build tools|30.0.2|
+|Unity-bundled Android Platform|30 rev 3|
+|Unity asset: AltUnity Tester|1.7.0|
+|Unity asset: JSON .NET for Unity|2.0.1|
+|Appium|2.0.0-beta.25|
+|Appium UiAutomator2 driver|2.0.3|
+|Appium AltUnity Plugin|1.3.0|
+
+
 ### Test Framework (Optional)
 
 We'll be writing scripts from scratch in WebDriverIO. If you want, you can use another test language or framework, you'll just need to do the setup yourself (and be comfortable transposing WebDriver commands into your preferred API). So if you're not going to follow along, make sure you come along with an empty Java or Python automation project, including the Appium client library, that you can start creating Appium sessions with.
 
-# Conceptual intro
+## Conceptual intro
 
 *(10 min)* This portion of the workshop is covered with slides and explains the ideas and architecture underlying our work here.
 
-# Building our game
+## Building our game
 
 *(20 min)* The goal in this section is to get our demo game building and running on an Android device.
 
@@ -70,7 +111,7 @@ If you get a message about ARM64 vs ARMv7, or x86:
     * Can switch to Landscape mode
     * Currently, only keyboard controls are supported, no tap-to-move. Might need a keyboard plugged in if you're on a real device.
 
-# Setting up AltUnity tester
+## Setting up AltUnity tester
 
 *(10 min)* The goal in this section is to instrument the app with the AltUnity Tester server which is necessary for the Appium plugin to communicate with internal game objects.
 
@@ -113,7 +154,7 @@ The app is now properly instrumented with AltUnity Tester and ready for testing 
 * Now find the Player object in the Hierarchy, and give it a custom player name as the AltId
 * Save and rebuild
 
-# Configuring the Appium plugin
+## Configuring the Appium plugin
 
 *(10 min)* The goal of this section is to ensure we can have an empty Appium script that successfully connects to the AltUnity process within the game.
 
@@ -145,7 +186,7 @@ Troubleshooting:
 * Did you use the app with the AltUnity server instrumented into it?
 * Did you opt in to using the plugin when you started Appium?
 
-# Designing and writing tests
+## Designing and writing tests
 
 *(35 min)* The goal of this section is to explore what is possible with the Appium plugin and to write some tests of our game using the special plugin features
 
@@ -187,7 +228,7 @@ What we are doing here is finding game objects via XPath, then asserting whether
 
 Various locator strategies are available.
 * `xpath`: finds the element via xpath query on the provided source
-* `id`: finds the element via something called the AltId, which can be set on the element using the AltUnity Tester Editor in Unity 
+* `id`: finds the element via something called the AltId, which can be set on the element using the AltUnity Tester Editor in Unity
 * `css selector`: this only works for IDs, it's a convenience method since some clients translate id to css selector now
 * `link text`: this finds an element by its text
 * `tag name`: this finds an element by its type, e.g., `Enemy`
@@ -287,6 +328,6 @@ Basically the way this test works is we create an action to hold down the right 
 
 You can do a whole lot from here! Try to automate more of the game!
 
-# Conclusion and next steps
+## Conclusion and next steps
 
 *(5 min)* This portion of the workshop is covered with slides.
