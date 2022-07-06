@@ -1,6 +1,6 @@
 # Unity Plugin Workshop
 
-This is the workbook for a workshop led by Jonathan Lipps on how to use the [Appium AltUnity Plugin](https://github.com/projectxyzio/appium-altunity-lugin). Make sure you have taken care of the prerequisites before following this workbook.
+This is the workbook for a workshop led by Jonathan Lipps on how to use the [Appium AltUnity Plugin](https://github.com/projectxyzio/appium-altunity-lugin). Make sure you have taken care of the prerequisites before following this workbook. It's also a good idea to have the plugin README and docs open for reference.
 
 * [Prerequisites](#prerequisites)
   * [Unity](#unity)
@@ -253,6 +253,8 @@ Various element commands are available:
 * get attribute (can get anything you can see in the XML)
 * get text
 * is displayed
+* and more (see the [plugin
+reference](https://github.com/projectxyzio/appium-altunity-plugin/tree/master/docs))
 
 ### Keystrokes, clicking, and text
 
@@ -289,7 +291,8 @@ Games often involve key or button presses. To automate this, use the Actions API
     await driver.performActions([pressEsc])
     ```
 * Notice how we can't see the Text of the buttons directly so we have to get all the Text items underneath the Button items and check their text, in order to click on the one we want. So this is how we perform key presses, get text, and click elements.
-* To figure out which key strings are available, check the plugin source code for the `key-code.ts` file
+* To figure out which key strings are available, check the plugin source code for the
+[AltKeyCode](https://github.com/projectxyzio/appium-altunity-plugin/blob/master/src/client/key-code.ts) enum.
 
 ### Putting it all together
 
